@@ -1,64 +1,74 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Terreiro{% endblock %}</title>
-    <link rel="stylesheet" href="">
+
+    <!-- Fontes e ícones -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <script src="https://kit.fontawesome.com/SEU_CODIGO_AQUI.js" crossorigin="anonymous"></script> <!-- Para ícones -->
+    
+    <!-- Seu CSS local -->
+    <link rel="stylesheet" href="{% static 'geral/css/base.css' %}">
+
 </head>
 <body>
 
-    <!-- Menu fixo -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <!-- Sessão de logo e frases -->
+    <div class="top-bar">
+        <div class="container d-flex align-items-center">
+            <img class="logo" src="{% static 'geral/img/t4.jpeg' %}" alt="Logo do Terreiro">
+            <div class="text-area">
+                <div class="title">Casa São Sebastião e Santa Bárbara de Oyá</div>
+                <div class="subtitle">"Fora da caridade não há salvação."</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Menu de navegação -->
+    <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#">Casa Mãe Maria</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <a class="navbar-brand" href="#"><i class="fas fa-home me-2"></i>Casa Mãe Maria</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="{% url 'historia' %}">História</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'hierarquia' %}">Hierarquia</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'calendario' %}">Calendário</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'banhos' %}">Banhos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'ervas' %}">Ervas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'entrar' %}">Entrar/Cadastrar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'historia' %}"><i class="fas fa-book-open me-1"></i>História</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'hierarquia' %}"><i class="fas fa-sitemap me-1"></i>Hierarquia</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'calendario' %}"><i class="fas fa-calendar-alt me-1"></i>Calendário</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'banhos' %}"><i class="fas fa-water me-1"></i>Banhos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'ervas' %}"><i class="fas fa-leaf me-1"></i>Ervas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'entrar' %}"><i class="fas fa-user me-1"></i>Entrar/Cadastrar</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Logo e frases -->
-    <section class="cont-logo text-center mt-4">
-        <img class="logo" src="#" alt="Logo do Terreiro">
-        <label class="text-logo d-block">Casa São Sebastião e Santa Bárbara de Oyá</label>
-        <div class="text-logo d-block">Fora da caridade não tem salvação.</div>
-    </section>
-
-    <hr>
-
     <!-- Conteúdo das páginas -->
-    {% block body %}
-      
-    {% endblock %}
+    <div class="container mt-4 main-content">
+        {% block body %}
+        {% endblock %}
+    </div>
 
-    <!-- Rodapé com redes sociais -->
-    <footer class="bg-dark text-white text-center p-3 mt-5">
-      <div class="d-flex justify-content-center align-items-center flex-wrap gap-3">
-          <span>&copy; {{ year }} Casa São Sebastião e Santa Bárbara de Oyá - Todos os direitos reservados</span>
-          <span class="mx-2">|</span>
-          <span>Siga-nos:</span>
-          <a href="https://www.instagram.com/centroespirita_eumbanda/" class="text-white mx-2" target="_blank">
-              <i class="fab fa-instagram fa-lg"></i>
-          </a>
-          <a href="https://chat.whatsapp.com/LoAxYpVc2fDKUWwjrH9OqU" class="text-white mx-2" target="_blank">
-              <i class="fab fa-whatsapp fa-lg"></i>
-          </a>
-      </div>
-  </footer>
+    <!-- Rodapé -->
+    <footer class="text-white text-center p-3 mt-5">
+        <div class="d-flex justify-content-center align-items-center flex-wrap gap-3">
+            <span>&copy; {{ year }} Casa São Sebastião e Santa Bárbara de Oyá - Todos os direitos reservados</span>
+            <span class="mx-2">|</span>
+            <span>Siga-nos:</span>
+            <a href="https://www.instagram.com/centroespirita_eumbanda/" class="mx-2" target="_blank">
+                <i class="fab fa-instagram fa-lg"></i>
+            </a>
+            <a href="https://chat.whatsapp.com/LoAxYpVc2fDKUWwjrH9OqU" class="mx-2" target="_blank">
+                <i class="fab fa-whatsapp fa-lg"></i>
+            </a>
+        </div>
+    </footer>
 
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
