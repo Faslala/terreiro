@@ -10,28 +10,30 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     
-    <!-- Seu CSS local -->
+    <!-- CSS local -->
     <link rel="stylesheet" href="{% static 'geral/css/base.css' %}">
-
 </head>
 <body>
 
-    <!-- Sessão de logo e frases -->
+    <!-- Topo -->
     <div class="top-bar">
         <div class="container d-flex align-items-center">
             <img class="logo" src="{% static 'geral/img/t4.jpeg' %}" alt="Logo do Terreiro">
             <div class="text-area">
                 <div class="title">Casa São Sebastião e Santa Bárbara de Oyá</div>
                 <div class="subtitle">"Fora da caridade não há salvação."</div>
+                <div class="subtitle small-text">
+                    Rua Um, nº 00, Bairro Centro – Campos Gerais/MG – CEP 37160-000
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Menu de navegação -->
+    <!-- Navegação -->
     <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
         <div class="container">
             <a class="navbar-brand" href="#"><i class="fas fa-home me-2"></i>Casa Mãe Maria</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
@@ -47,24 +49,25 @@
         </div>
     </nav>
 
-    <!-- Conteúdo das páginas -->
+    <!-- Conteúdo principal -->
     <div class="container mt-4 main-content">
-        {% block body %}
-        {% endblock %}
+        {% block body %}{% endblock %}
     </div>
 
     <!-- Rodapé -->
-    <footer class="text-white text-center p-3 mt-5">
-        <div class="d-flex justify-content-center align-items-center flex-wrap gap-3">
-            <span>&copy; {{ year }} Casa São Sebastião e Santa Bárbara de Oyá - Todos os direitos reservados</span>
-            <span class="mx-2">|</span>
-            <span>Siga-nos:</span>
-            <a href="https://www.instagram.com/centroespirita_eumbanda/" class="mx-2" target="_blank">
-                <i class="fab fa-instagram fa-lg"></i>
-            </a>
-            <a href="https://chat.whatsapp.com/LoAxYpVc2fDKUWwjrH9OqU" class="mx-2" target="_blank">
-                <i class="fab fa-whatsapp fa-lg"></i>
-            </a>
+    <footer class="site-footer mt-5">
+        <div class="footer-main text-center text-white py-3">
+            <div>&copy; {{ year }} Casa São Sebastião e Santa Bárbara de Oyá</div>
+            <div class="footer-cnpj">CNPJ: 12.345.678/0001-90</div>
+            <div>Todos os direitos reservados</div>
+            <div class="mt-2">
+                <span>Siga-nos:</span>
+                <a href="https://www.instagram.com/centroespirita_eumbanda/" target="_blank" class="mx-2"><i class="fab fa-instagram"></i></a>
+                <a href="https://chat.whatsapp.com/LoAxYpVc2fDKUWwjrH9OqU" target="_blank" class="mx-2"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+        <div class="footer-creditos text-end pe-4 py-1">
+            Website desenvolvido por <a href="https://www.linkedin.com/in/faslala/" target="_blank">Faslala Assis</a>
         </div>
     </footer>
 

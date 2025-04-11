@@ -1,13 +1,10 @@
-.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' ...");
-}
-
+/* Estilo global */
 body {
     font-family: 'Cinzel', serif;
     overflow-x: hidden;
 }
 
-/* Sessão do topo */
+/* Topo */
 .top-bar {
     background: linear-gradient(90deg, #f5d365, #ffafbd);
     color: #4b2c20;
@@ -38,29 +35,63 @@ body {
     font-size: 1.1rem;
 }
 
-/* Navbar e rodapé */
-.navbar-custom,
-footer {
+.small-text {
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+/* Navbar */
+.navbar-custom {
     background-color: #c49b46;
 }
 
 .navbar-custom .nav-link,
-.navbar-custom .navbar-brand,
-footer,
-footer a {
+.navbar-custom .navbar-brand {
     color: #fff !important;
     transition: all 0.3s ease;
 }
 
 .navbar-custom .nav-link:hover,
-.navbar-custom .navbar-brand:hover,
-footer a:hover {
+.navbar-custom .navbar-brand:hover {
     color: #4b2c20 !important;
 }
 
-/* Conteúdo com animação */
+/* Conteúdo principal */
 .main-content {
     animation: slideUp 1s ease-out;
+}
+
+/* Rodapé */
+.site-footer {
+    background-color: #c49b46;
+    color: white;
+    font-size: 0.95rem;
+}
+
+.site-footer .footer-main {
+    border-top: 1px solid #ffffff33;
+}
+
+.site-footer .footer-cnpj {
+    font-size: 0.9rem;
+    margin: 4px 0;
+}
+
+.site-footer .footer-creditos {
+    font-size: 0.75rem;
+    background-color: #b3893c;
+    color: #eaeaea;
+    text-transform: lowercase;
+}
+
+.site-footer .footer-creditos a {
+    color: #fff2d5;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.site-footer .footer-creditos a:hover {
+    text-decoration: underline;
 }
 
 /* Responsividade */
